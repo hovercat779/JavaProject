@@ -1,4 +1,5 @@
 <%--<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>--%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -13,11 +14,11 @@
 <table border="1">
     <td>ID</td>
 
-    <%--<c:forEach items="${users}" var="user">--%>
-        <%--<tr>--%>
-            <%--&lt;%&ndash;<td><c:out value="${user.getCustNum()}"/></td>&ndash;%&gt;--%>
-        <%--</tr>--%>
-    <%--</c:forEach>--%>
+    <c:forEach items="${users}" var="user">
+        <tr>
+            <td><c:out value="${user.getCustNum()}"/></td>
+        </tr>
+    </c:forEach>
 </table>
 
 
