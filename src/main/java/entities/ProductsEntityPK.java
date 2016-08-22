@@ -5,9 +5,9 @@ import javax.persistence.Id;
 import java.io.Serializable;
 
 /**
- * Created by hovercat on 20.08.16.
+ * Created by hovercat on 22.08.16.
  */
-public class ProductsPK implements Serializable {
+public class ProductsEntityPK implements Serializable {
     private String mfrId;
     private String productId;
 
@@ -36,7 +36,7 @@ public class ProductsPK implements Serializable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        ProductsPK that = (ProductsPK) o;
+        ProductsEntityPK that = (ProductsEntityPK) o;
 
         if (mfrId != null ? !mfrId.equals(that.mfrId) : that.mfrId != null) return false;
         if (productId != null ? !productId.equals(that.productId) : that.productId != null) return false;

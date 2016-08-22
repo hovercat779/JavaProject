@@ -7,7 +7,8 @@ import java.math.BigDecimal;
  * Created by hovercat on 20.08.16.
  */
 @Entity
-@IdClass(ProductsPK.class)
+@IdClass(ProductsEntityPK.class)
+@Table(name = "PRODUCTS", schema = "testDB", catalog = "")
 public class ProductsEntity {
     private String mfrId;
     private String productId;

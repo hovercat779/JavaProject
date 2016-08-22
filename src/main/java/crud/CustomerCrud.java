@@ -29,6 +29,7 @@ public class CustomerCrud {
             if (tx != null) tx.rollback();
             e.printStackTrace();
         } finally {
+            session.flush();
             session.close();
         }
         return custNum;
@@ -73,14 +74,13 @@ public class CustomerCrud {
         }
     }
 
-
     public static List<CustomersEntity> getAllCust() {
         List<CustomersEntity> cust = new ArrayList<>();
         Transaction trns = null;
         Session session = HibernateUtil.getSessionFactory().openSession();
         try {
             trns = session.beginTransaction();
-            cust = session.createQuery("from CustomersEntity").list();
+            cust = session.createCriteria(CustomersEntity.class).list();
             for (CustomersEntity entity : cust) {
                 System.out.println(entity.getCompany());
             }

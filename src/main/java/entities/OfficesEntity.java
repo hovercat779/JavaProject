@@ -1,21 +1,20 @@
 package entities;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 /**
  * Created by hovercat on 20.08.16.
  */
 @Entity
+@Table(name = "OFFICES", schema = "testDB", catalog = "")
 public class OfficesEntity {
     private int office;
     private String city;
     private String region;
     private BigDecimal target;
     private BigDecimal sales;
+    private Integer mgr;
 
     @Id
     @Column(name = "OFFICE")
@@ -91,5 +90,15 @@ public class OfficesEntity {
         result = 31 * result + (target != null ? target.hashCode() : 0);
         result = 31 * result + (sales != null ? sales.hashCode() : 0);
         return result;
+    }
+
+    @Basic
+    @Column(name = "MGR")
+    public Integer getMgr() {
+        return mgr;
+    }
+
+    public void setMgr(Integer mgr) {
+        this.mgr = mgr;
     }
 }

@@ -1,15 +1,15 @@
 package entities;
 
-import javax.persistence.Basic;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import java.math.BigDecimal;
 
 /**
  * Created by hovercat on 20.08.16.
  */
 @Entity
+@Table(name = "CUSTOMERS", schema = "testDB", catalog = "")
 public class CustomersEntity {
     private int custNum;
     private String company;
@@ -18,6 +18,8 @@ public class CustomersEntity {
 
     @Id
     @Column(name = "CUST_NUM")
+    @GenericGenerator(name = "generator", strategy = "increment")
+    @GeneratedValue(generator = "generator")
     public int getCustNum() {
         return custNum;
     }
