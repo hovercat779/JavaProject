@@ -24,21 +24,17 @@ public class RegistrationServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String company = req.getParameter("company");
-        String custRep = req.getParameter("custRep");
-        String creditLimit = req.getParameter("creditLimit");
 
-//        customer.setCompany(req.getParameter("company"));
-//        customer.setCreditLimit(BigDecimal.valueOf(Long.parseLong(req.getParameter("creditLimit"))));
-//        customer.setCustRep(Integer.valueOf(req.getParameter("custRep")));
+        req.getRequestDispatcher("registration.jsp").forward(req, resp);
 
-//        CustomerCrud.addCustomer(customer);
-//        req.getRequestDispatcher("table.jsp").forward(req, resp);
+        CustomersEntity customer = new CustomersEntity();
 
-        CustomersEntity customer = new CustomersEntity(
-                req.getParameter("company"),
-                Integer.parseInt(req.getParameter("custRep")),
-                BigDecimal.valueOf(Long.parseLong(req.getParameter("creditLimit"))));
+        customer.setCompany(req.getParameter("company"));
+        customer.setCreditLimit(BigDecimal.valueOf(Long.parseLong(req.getParameter("creditLimit"))));
+        customer.setCustRep(Integer.valueOf(req.getParameter("custRep")));
+
         CustomerCrud.addCustomer(customer);
+
+        req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 }

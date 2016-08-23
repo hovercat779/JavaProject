@@ -7,14 +7,13 @@
 <body>
 
 <form action="<c:url value='/registration' />" method="post">
+
     Company: <input type="text" name="company" value=""/><br>
     Company's rep: <input type="text" name="custRep" value=""/><br>
     Credit limit: <input type="text" name="creditLimit" value=""/><br>
 
-    <input type="submit" value="Submit"/> <br>
+    <input type="submit" value="submit"/> <br>
 </form>
-
-<input type="submit" value="registration"/> <br>
 
 <form action="<c:url value='index.jsp'/>" method="post">
     <input type="submit" value="back">
