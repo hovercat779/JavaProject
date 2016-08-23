@@ -15,5 +15,9 @@
     <input type="submit" value="table"/>
   </form>
 
+  <form action="<c:url value='/registration'/>" method="post">
+    <input type="submit" value="registration"/>
+  </form>
+
   </body>
 </html>

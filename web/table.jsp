@@ -8,7 +8,7 @@
 <body>
 
 <form action="<c:url value="/index.jsp"/>" method="post">
-    <input type="submit" value="first page"/>
+    <input type="submit" value="back"/>
 </form>
 
 <table border="1">

@@ -16,6 +16,15 @@ public class CustomersEntity {
     private Integer custRep;
     private BigDecimal creditLimit;
 
+    public CustomersEntity() {
+    }
+
+    public CustomersEntity(String company, Integer custRep, BigDecimal creditLimit) {
+        this.company = company;
+        this.custRep = custRep;
+        this.creditLimit = creditLimit;
+    }
+
     @Id
     @Column(name = "CUST_NUM")
     @GenericGenerator(name = "generator", strategy = "increment")
